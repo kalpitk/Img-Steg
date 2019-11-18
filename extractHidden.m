@@ -1,4 +1,4 @@
-function extHidden = extractHidden(target_img, steg_img, Beta)
+function hidden_img = extractHidden(target_img, steg_img, Beta)
 
 	TARGET_IMG_SIZE = 512;
 	STEG_IMG_SIZE = 512;
@@ -24,8 +24,6 @@ function extHidden = extractHidden(target_img, steg_img, Beta)
 	hidden_img = get_hidden(steg_img_dct, target_img_dct, Beta);
 
 	hidden_img = uint8(hidden_img);
-
-	extHidden = hidden_img;
 
 	% figure;
 	% imshow(hidden_img);
