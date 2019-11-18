@@ -13,10 +13,17 @@ hidden_img = imread(HIDDEN_IMG_NAME);
 target_img = imresize(target_img, [TARGET_IMG_SIZE TARGET_IMG_SIZE]);
 hidden_img = imresize(hidden_img, [HIDDEN_IMG_SIZE HIDDEN_IMG_SIZE]);
 
-steg_img = embed_img(target_img, hidden_img, 0.03);
+steg_img = embed_img(target_img, hidden_img, 0.01);
 
 disp(psnr(target_img, steg_img));
 
-extHidden = extractHidden(target_img, steg_img, 0.03);
+extHidden = extractHidden(target_img, steg_img, 0.01);
+extHidden = imresize(extHidden, [HIDDEN_IMG_SIZE HIDDEN_IMG_SIZE]);
+
+figure;
+imshow(hidden_img);
+
+figure;
+imshow(extHidden);
 
 disp(psnr(hidden_img, extHidden));
