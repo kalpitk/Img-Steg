@@ -1,4 +1,4 @@
-function [psnrTarget,steg_img] = embed_img(target_img,hidden_img,Beta)
+function steg_img = embed_img(target_img,hidden_img,Beta)
 
 % Target image size multiple of Hidden image size
 TARGET_IMG_SIZE = 512;
