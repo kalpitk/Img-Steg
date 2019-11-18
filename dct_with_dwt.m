@@ -36,6 +36,8 @@ steg_img = uint8(steg_img);
 % figure
 % imshow(steg_img);
 
-imwrite(steg_img, STEG_IMG_NAME);
+%imwrite(steg_img, STEG_IMG_NAME);
 
-psnrTarget = psnr(target_img, steg_img);
+%psnrTarget = psnr(target_img, steg_img);
+
+end
