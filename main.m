@@ -13,7 +13,7 @@ hidden_img = imread(HIDDEN_IMG_NAME);
 target_img = imresize(target_img, [TARGET_IMG_SIZE TARGET_IMG_SIZE]);
 hidden_img = imresize(hidden_img, [HIDDEN_IMG_SIZE HIDDEN_IMG_SIZE]);
 
-steg_img = embedImg(target_img, hidden_img, 0.03);
+steg_img = embed_img(target_img, hidden_img, 0.03);
 
 disp(psnr(target_img, steg_img));
 
