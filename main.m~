@@ -38,7 +38,8 @@ for Beta = 0.001:0.001:0.005
 	% disp(psnr(hidden_img, extHidden));
 end
 
+figure;
+subplot(1,2,1);
+
 plot(betas, psnrHidden);
-hold on
 plot(betas, psnrTarget);
-hold off

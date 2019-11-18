@@ -1,10 +1,5 @@
 function extHidden = extractHidden(target_img, steg_img, Beta)
 
-	TARGET_IMG_SIZE = 512;
-	STEG_IMG_SIZE = 512;
-	HIDDEN_IMG_SIZE = 200;
-
-	SUB_BLOCK_SIZE = 8;
 
 	target_img_dct = zeros(TARGET_IMG_SIZE, TARGET_IMG_SIZE,3);
 	steg_img_dct = zeros(STEG_IMG_SIZE, STEG_IMG_SIZE,3);

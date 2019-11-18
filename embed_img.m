@@ -1,14 +1,9 @@
 function steg_img = embed_img(target_img,hidden_img,Beta)
 
-% Target image size multiple of Hidden image size
 TARGET_IMG_SIZE = 512;
 HIDDEN_IMG_SIZE = 200;
 
 SUB_BLOCK_SIZE = 8;
-
-
-target_img = imresize(target_img, [TARGET_IMG_SIZE TARGET_IMG_SIZE]);
-hidden_img = imresize(hidden_img, [HIDDEN_IMG_SIZE HIDDEN_IMG_SIZE]);
 
 target_img_dct = zeros(TARGET_IMG_SIZE, TARGET_IMG_SIZE,3);
 
