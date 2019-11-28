@@ -27,6 +27,6 @@ function [DC, AC] = coeffToArray(dct_img)
 		end
 	end
 
-	DC = permute(DC);
-	AC = permute(AC);
+	DC = permuteArr(DC);
+	AC = permuteArr(AC);
 end
