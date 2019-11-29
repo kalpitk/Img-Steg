@@ -1,3 +1,6 @@
 function r = rob(hostImg, stegImg)
-	r = getBlockiness(stegImg)/getBlockiness(hostImg);
+	v1 = getBlockiness(stegImg);
+	v2 = getBlockiness(hostImg);
+
+	r = v1/v2;
 end

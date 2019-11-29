@@ -1,5 +1,6 @@
 % Convert array of AC, DC coeff to Img
 function img = invDCTarray(DC, AC, n, m)
+
 	dct_img = zeros(n,m);
 
 	DC = invPermute(DC);
@@ -25,5 +26,5 @@ function img = invDCTarray(DC, AC, n, m)
 		end
 	end
 
-	img = invDCT(dct_img);
+	img = invDCT(dct_img, n, m);
 end

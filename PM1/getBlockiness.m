@@ -4,14 +4,16 @@ function bl = getBlockiness(img)
 	bl = 0;
 
 	for i = 1:n
-		for j = 1:8:m-1
-			bl = bl + abs(img(i,j) - img(i,j+1));
+		for j = 8:8:m-1
+			bl = bl + abs(int64(img(i,j)) - int64(img(i,j+1)));
 		end
 	end
 
 	for i = 1:m
-		for j = 1:8:m-1
-			bl = bl + abs(img(j,i) - img(j+1,i));
+		for j = 8:8:n-1
+			bl = bl + abs(int64(img(j,i)) - int64(img(j+1,i)));
 		end
 	end
+
+	bl = double(bl);
 end
