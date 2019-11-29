@@ -4,8 +4,8 @@ function [DC, AC] = coeffToArray(dct_img)
 	DC_sz = (int64((n-1)/8))*(int64((m-1)/8));
 	AC_sz = n*m - DC_sz;
 
-	DC = zeros(DC_sz);
-	AC = zeros(AC_sz);
+	DC = zeros(1, DC_sz);
+	AC = zeros(1, AC_sz);
 
 	coeffIter = 1;
 	for i = 1:8:n
