@@ -1,9 +1,13 @@
 function fitnessVal = chromosomeFitness(chromosome, hostImg, hostCoeff, hostDC_coeff, changePositions)
-	newCoeff = updateCoeff(hostCoeff, changePositions, chromosome);
-
-	[n m] = size(hostImg);
+    [n m] = size(hostImg);
+    disp("CCCC");
+	disp(chromosome);
 	AC = updateCoeff(hostCoeff, changePositions, chromosome);
-	newImg = invDCTarray(hostDC_coeff, newCoeff, n, m);
+	newImg = invDCTarray(hostDC_coeff, AC, n, m);
+
+	disp(newImg(1:10));
+
+	disp(psnr(hostImg,newImg));
 
 	fitnessVal = rob(hostImg, newImg);
 end

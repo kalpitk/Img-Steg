@@ -1,7 +1,7 @@
 ORG_IMG_NAME = 'org_img.png';
 STEG_IMG_NAME = 'steg_img.png';
 
-POP_SIZE = 3;
+POP_SIZE = 4;
 TOTAL_ITER = 2;
 
 QUALITY = 89;
@@ -12,10 +12,8 @@ SUB_BLOCK_SIZE = 8;
 
 target_img = imread(ORG_IMG_NAME);
 
-secMsg = 'abc12jhfljdksssssssssssssssssssssssssssssssssskkkfhjkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk3';
+secMsg = getRandomData(2000);
 secMsg = toBinary(secMsg);
-
-secMsg = ones(1,32768);
 
 target_img = imresize(target_img, [TARGET_IMG_SIZE TARGET_IMG_SIZE]);
 
@@ -42,30 +40,38 @@ locations = findLocations(AC, secMsg);
 population = initPop(length(locations), POP_SIZE);
 population_fitness = zeros(1,POP_SIZE);
 
-bestChromosome = zeros(length(locations));
+bestChromosome = zeros(1,length(locations));
 bestChromosomeFitness = 0;
 
 for iter = 1:TOTAL_ITER
 
 	for i = 1:POP_SIZE
-		population_fitness(i) = chromosomeFitness(population(i),target_img,AC,DC,locations);
+		disp(population(i,:));
+		population_fitness(i) = chromosomeFitness(population(i,:),target_img,AC,DC,locations);
 	end
 
 	[maxFit, index] = max(population_fitness);
 
 	if maxFit > bestChromosomeFitness
-		bestChromosome = population(index);
+		bestChromosome = population(index,:);
 		bestChromosomeFitness = maxFit;
 	end
 
 	population = nextGen(population, population_fitness);
 end
 
-AC = updateCoeff(AC, locations, bestChromosome);
+% disp("CCCCCCCCCCCCC");
+% % disp(bestChromosome);
+
+% disp(locations);
+
+AC1 = updateCoeff(AC, locations, bestChromosome);
+
+disp(psnr(AC1,AC));
 
 % IDCT
 
-dct_img = array2coeff(DC, AC, TARGET_IMG_SIZE, TARGET_IMG_SIZE*3);
+dct_img = array2coeff(DC, AC1, TARGET_IMG_SIZE, TARGET_IMG_SIZE*3);
 
 
 K = invDCT(dct_img, row, coln);
