@@ -1,10 +1,3 @@
-function res = toBinary(msg)
-	b = dec2bin(msg,8);
-    len = length(msg);
-    
-    res = zeros(len*8);
-    
-    for i = 1:len
-        res(i:i+8) = b(i);
-    end
+function binString = toBinary(msg)
+binString = reshape(dec2bin(char(msg),7).'-'0',1,[])
 end
