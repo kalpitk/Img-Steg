@@ -4,12 +4,12 @@ function change = findLocations(inpCoeff,secMsg)
     inpIt=1;secIt=1;
     
     while secIt<=length(updSecMsg)
-        if inpCoeff(inpIt)>0
+        if inpCoeff(inpIt)>1
             if mod(inpCoeff(inpIt)+updSecMsg(secIt),2)==1
                    change = [change inpIt];
             end
             secIt = secIt+1;
-        elseif inpCoeff(inpIt)<0
+        elseif inpCoeff(inpIt)<-1
             if mod(inpCoeff(inpIt)+updSecMsg(secIt),2)==0
                    change = [change inpIt];
             end

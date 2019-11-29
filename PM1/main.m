@@ -46,8 +46,8 @@ bestChromosomeFitness = 0;
 for iter = 1:TOTAL_ITER
 
 	for i = 1:POP_SIZE
-		disp(population(i,:));
 		population_fitness(i) = chromosomeFitness(population(i,:),target_img,AC,DC,locations);
+		disp(population_fitness(i));
 	end
 
 	[maxFit, index] = max(population_fitness);
