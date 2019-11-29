@@ -1,3 +1,4 @@
+
 function bl = getBlockiness(img)
 	[n m] = size(img);
 

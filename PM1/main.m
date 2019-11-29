@@ -1,8 +1,8 @@
 ORG_IMG_NAME = 'org_img.png';
 STEG_IMG_NAME = 'steg_img.png';
 
-POP_SIZE = 4;
-TOTAL_ITER = 2;
+POP_SIZE = 40;
+TOTAL_ITER = 10;
 
 QUALITY = 89;
 
@@ -12,7 +12,7 @@ SUB_BLOCK_SIZE = 8;
 
 target_img = imread(ORG_IMG_NAME);
 
-secMsg = getRandomData(2000);
+secMsg = getRandomData(15000);
 secMsg = toBinary(secMsg);
 
 target_img = imresize(target_img, [TARGET_IMG_SIZE TARGET_IMG_SIZE]);
@@ -45,8 +45,11 @@ bestChromosomeFitness = 0;
 
 for iter = 1:TOTAL_ITER
 
+	disp(iter);
+
 	for i = 1:POP_SIZE
 		population_fitness(i) = chromosomeFitness(population(i,:),target_img,AC,DC,locations);
+		disp(i);
 		disp(population_fitness(i));
 	end
 
@@ -60,10 +63,6 @@ for iter = 1:TOTAL_ITER
 	population = nextGen(population, population_fitness);
 end
 
-% disp("CCCCCCCCCCCCC");
-% % disp(bestChromosome);
-
-% disp(locations);
 
 AC1 = updateCoeff(AC, locations, bestChromosome);
 
