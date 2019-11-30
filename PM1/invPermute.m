@@ -1,4 +1,7 @@
+%--------------------------------------------
+% Inverse Permute the array
+% to get initial array
+%--------------------------------------------
 function res = invPermute(arr)
-	% TODO : Update with key
 	res = arr;
 end

@@ -1,3 +1,7 @@
+%--------------------------------------------
+% Appends length of message (16-bits)
+% before the actual message
+%--------------------------------------------
 function newMsg = appendLength_msg(msg)
     msg_len = length(msg);
     str_len = dec2bin(msg_len);

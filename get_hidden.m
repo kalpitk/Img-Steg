@@ -1,3 +1,7 @@
+%--------------------------------------------
+% Calculate Difference of LL bands
+% to extract hidden image
+%--------------------------------------------
 function hidden_ll = get_hidden(steg_dct,host_image_dct,beta)
 
     [host_ll,~,~,~]=dwt2(host_image_dct,'haar');

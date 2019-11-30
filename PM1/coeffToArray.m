@@ -1,3 +1,7 @@
+%--------------------------------------------
+% Converts DCT Matrix
+% -> Array of AC, DC Coefficients
+%--------------------------------------------
 function [DC, AC] = coeffToArray(dct_img)
 	[n m] = size(dct_img);
 

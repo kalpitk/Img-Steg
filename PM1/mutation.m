@@ -1,3 +1,6 @@
+%--------------------------------------------
+% Mutates a chromosome with a small probability
+%--------------------------------------------
 function final_chrom = mutation(chrom, mutationProbability)
     final_chrom = chrom;
     len = length(chrom);

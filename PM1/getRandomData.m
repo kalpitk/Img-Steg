@@ -1,3 +1,7 @@
+%--------------------------------------------
+% Generates random character data
+% of given length
+%--------------------------------------------
 function randData = getRandomData(len)
     randDataBinary = zeros(1,7*len);
     for i = 1:len

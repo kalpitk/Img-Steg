@@ -1,3 +1,7 @@
+%--------------------------------------------
+% Calculate inverse of Quantized DCT
+% of an RGB image of 8x8 Size
+%--------------------------------------------
 function K = invDCT(dct_img, row, coln)
 
 	global QX
@@ -34,9 +38,6 @@ function K = invDCT(dct_img, row, coln)
 	% ---------------------------------------------------------
 	% Conversion of Image Matrix to Intensity image
 	%----------------------------------------------------------
-
-	% figure;
-	% imshow(I2);
 
 	TARGET_IMG_SIZE = 2048;
 

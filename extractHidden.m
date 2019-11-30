@@ -1,3 +1,6 @@
+%--------------------------------------------
+% Extracts Secret Image from Steganographic Image
+%--------------------------------------------
 function hidden_img = extractHidden(target_img, steg_img, Beta)
 
 	TARGET_IMG_SIZE = 512;
@@ -27,3 +30,5 @@ function hidden_img = extractHidden(target_img, steg_img, Beta)
     
     % figure;
 	% imshow(hidden_img);
+
+end

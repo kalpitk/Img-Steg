@@ -1,3 +1,6 @@
+%--------------------------------------------
+% Crossover function for Genetic Algorithm
+%--------------------------------------------
 function crossed_chrom = crossover(chrom1,chrom2)
     len = length(chrom1);
     crossed_chrom = zeros(1,len);

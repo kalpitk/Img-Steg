@@ -1,4 +1,6 @@
+%--------------------------------------------
 % Convert array of AC, DC coeff to Img
+%--------------------------------------------
 function img = invDCTarray(DC, AC, n, m)
 
 	dct_img = zeros(n,m);

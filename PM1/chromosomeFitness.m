@@ -1,3 +1,10 @@
+%--------------------------------------------
+% Calculates Fitness of Chromosome
+% 
+% May depend on either -
+% - 1/rob
+% - psnr
+%--------------------------------------------
 function fitnessVal = chromosomeFitness(chromosome, hostImg, hostCoeff, hostDC_coeff, changePositions)
     [n m] = size(hostImg);
 
@@ -5,5 +12,5 @@ function fitnessVal = chromosomeFitness(chromosome, hostImg, hostCoeff, hostDC_c
 
 	newImg = invDCTarray(hostDC_coeff, AC, n, m);
 
-	fitnessVal = 1.0/rob(hostImg, newImg);
+	fitnessVal = psnr(hostImg, newImg);
 end

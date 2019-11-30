@@ -1,3 +1,6 @@
+%--------------------------------------------
+% Calculate DCT of an RGB image of 8x8 Size
+%--------------------------------------------
 function dct_image = dct_rgb(image)
 
 	dct_image = zeros(8,8,3);

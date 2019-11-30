@@ -1,3 +1,11 @@
+%--------------------------------------------
+% Find appropriate locations for embedding data
+%
+% Locations with values greater than 1
+% or less than -1 picked
+%
+% Returns array of indices
+%--------------------------------------------
 function change = findLocations(inpCoeff,secMsg)
     MAX_SIZE = 240000;
 

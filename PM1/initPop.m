@@ -1,3 +1,6 @@
+%---------------------------------------------
+% Initializes population for Genetic Algorithm
+%---------------------------------------------
 function population = initPop(chrom_length,size_pop)
     population = zeros(size_pop,chrom_length);
     population(1,:) = ones(1,chrom_length);

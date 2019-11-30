@@ -1,3 +1,8 @@
+%--------------------------------------------
+% Select a Parent for crossover
+%
+% Roulette Wheel with exponential probability
+%--------------------------------------------
 function parent_index = selectParent(fitness_population)
     fitness_max = 1000^(max(fitness_population));
     len = length(fitness_population);

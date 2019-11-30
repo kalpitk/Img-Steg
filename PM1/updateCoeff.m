@@ -1,3 +1,7 @@
+%--------------------------------------------
+% Modifies AC coefficients acc to
+% the chromosome passed
+%--------------------------------------------
 function newCoeff = updateCoeff(hostCoeff, changePositions, chromosome)
     newCoeff = hostCoeff;
 	len = length(chromosome);

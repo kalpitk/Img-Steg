@@ -1,3 +1,6 @@
+%--------------------------------------------
+% Calculate Quantized DCT of 8x8 Image
+%--------------------------------------------
 function [dct_quantized] = applyDCT(I, DCT_matrix8, iDCT_matrix8, QX)
 	I1=I;
 	[row coln]= size(I);
