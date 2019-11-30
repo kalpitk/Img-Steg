@@ -1,3 +1,8 @@
+%--------------------------------------------
+% Generates a new generation by
+% - Crossover
+% - Mutation
+%--------------------------------------------
 function child_population = nextGen(population,fitness_population, mutationProbability)
     [pop_size chrom_len] = size(population);
     child_population = zeros(pop_size,chrom_len);
