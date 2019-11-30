@@ -8,7 +8,7 @@ HIDDEN_IMG_SIZE = 256;
 
 SUB_BLOCK_SIZE = 8;
 
-iter = 10;
+iter = 100;
 
 target_img = imread(ORG_IMG_NAME);
 hidden_img = imread(HIDDEN_IMG_NAME);
@@ -16,9 +16,9 @@ hidden_img = imread(HIDDEN_IMG_NAME);
 target_img = imresize(target_img, [TARGET_IMG_SIZE TARGET_IMG_SIZE]);
 hidden_img = imresize(hidden_img, [HIDDEN_IMG_SIZE HIDDEN_IMG_SIZE]);
 
-betas = zeros(iter);
-psnrHidden = zeros(iter);
-psnrTarget = zeros(iter);
+betas = zeros(1,iter);
+psnrHidden = zeros(1,iter);
+psnrTarget = zeros(1,iter);
 
 parfor i = 1:iter
 	betas(i) = i/1000;
@@ -30,7 +30,9 @@ parfor i = 1:iter
 	psnrHidden(i) = psnr(hidden_img, extHidden);
 end
 
-plot(betas, psnrHidden);
-hold on
-plot(betas, psnrTarget);
-hold off
+plot(betas, psnrTarget,'-r.',betas,psnrHidden,'-b.')
+h = legend('Target Image', 'Hidden Image');
+xlabel('Beta');
+ylabel('PSNR');
+
+set(h,'Interpreter','none');
