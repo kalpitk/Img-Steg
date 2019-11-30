@@ -38,12 +38,14 @@ function K = invDCT(dct_img, row, coln)
 	% figure;
 	% imshow(I2);
 
-	img1 = zeros(512,512,3);
-	for i = 1:512
-		for j = 1:512
+	TARGET_IMG_SIZE = 2048;
+
+	img1 = zeros(TARGET_IMG_SIZE,TARGET_IMG_SIZE,3);
+	for i = 1:TARGET_IMG_SIZE
+		for j = 1:TARGET_IMG_SIZE
 			img1(i,j,1) = I2(i,j);
-			img1(i,j,2) = I2(i,j+512);
-			img1(i,j,3) = I2(i,j+512*2);
+			img1(i,j,2) = I2(i,j+TARGET_IMG_SIZE);
+			img1(i,j,3) = I2(i,j+TARGET_IMG_SIZE*2);
 		end
 	end
 	K=uint8(255.*mat2gray(img1));

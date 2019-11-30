@@ -2,7 +2,7 @@ function [dct_quantized] = applyDCT(I, DCT_matrix8, iDCT_matrix8, QX)
 	I1=I;
 	[row coln]= size(I);
 	I= double(I);
-	I = I - (128*ones(512));
+	I = I - (128*ones(2048));
 
 	for i1=[1:8:row]
 	    for i2=[1:8:coln]

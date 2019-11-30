@@ -1,5 +1,5 @@
 function change = findLocations(inpCoeff,secMsg)
-    MAX_SIZE = 20000;
+    MAX_SIZE = 240000;
 
     updSecMsg = appendLength_msg(secMsg);
     change = zeros(1,MAX_SIZE);
